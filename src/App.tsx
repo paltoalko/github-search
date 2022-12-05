@@ -1,13 +1,13 @@
-import React from 'react';
-import { Box, ThemeProvider, Typography } from '@mui/material';
+import { Box, ThemeProvider } from '@mui/material';
 import theme from './assets/theme';
 import './assets/styles/style.css';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
     <Box className="App">
       <ThemeProvider theme={theme}>
-        <Typography variant="h1">Hello</Typography>
+        <HomePage />
       </ThemeProvider>
     </Box>
   );
