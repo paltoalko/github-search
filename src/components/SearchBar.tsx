@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../assets/styles/SearchBar.module.css';
 import { Box, IconButton, InputAdornment, TextField } from '@mui/material';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 interface IProps {
-  handleSearch: (e: string) => void;
+  handleSearch: (e) => void;
 }
 
 const SearchBar: React.FC<IProps> = ({ handleSearch }) => {
+  const [searchQuery, setSearchQuery] = useState('');
   return (
     <Box className={styles.searchContainer}>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSearch(searchQuery);
+        }}>
         <TextField
           id="search-bar"
           className="text"
           label="Github username"
           variant="outlined"
+          value={searchQuery}
+          onInput={(e) => setSearchQuery((e.target as HTMLInputElement).value)}
           placeholder="Search..."
-          onChange={(e) => handleSearch(e.target.value)}
           size="small"
           sx={{ minWidth: '30vw' }}
           inputProps={{

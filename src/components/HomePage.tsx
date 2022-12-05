@@ -3,8 +3,8 @@ import styles from '../assets/styles/HomePage.module.css';
 import { Box, Typography } from '@mui/material';
 import SearchBar from './SearchBar';
 import Results from './Results';
-import { searchUsers } from '../api/api';
 import data from '../response.json';
+import { searchUsers } from '../api/api';
 import { UserType } from '../assets/typings/types';
 
 const Start: React.FC<{}> = () => {
@@ -20,14 +20,12 @@ const Start: React.FC<{}> = () => {
       };
       return user;
     });
-
     setUsers(newList);
   };
 
-  const handleSearch = (e: string) => {
+  const handleSearch = (e) => {
     setSearchQuery(e);
     createUsers(searchResults);
-
     // searchUsers(e)
     //   .then((res) => {
     //     setSearchResults(res);
