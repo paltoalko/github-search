@@ -7,9 +7,6 @@ let theme = createTheme({
     },
     secondary: {
       main: '#83C5BE'
-    },
-    background: {
-      default: '#EDF6F9'
     }
   },
   typography: {
