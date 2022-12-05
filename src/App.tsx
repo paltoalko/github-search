@@ -1,15 +1,16 @@
-import React from "react";
+import React from 'react';
+import { Box, ThemeProvider, Typography } from '@mui/material';
+import theme from './assets/theme';
+import './assets/styles/style.css';
 
 function App() {
-	return (
-		<div className='App'>
-			<header className='App-header'>
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-			</header>
-		</div>
-	);
+  return (
+    <Box className="App">
+      <ThemeProvider theme={theme}>
+        <Typography variant="h1">Hello</Typography>
+      </ThemeProvider>
+    </Box>
+  );
 }
 
 export default App;
