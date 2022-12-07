@@ -5,17 +5,22 @@ import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 
 interface IProps {
-  handleSearch: (e) => void;
+  handleSearch: (e: string) => void;
 }
 
 const SearchBar: React.FC<IProps> = ({ handleSearch }) => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [error, setError] = useState('');
   return (
     <Box className={styles.searchContainer}>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          handleSearch(searchQuery);
+          if (searchQuery == '') {
+            setError('Username cannot be empty.');
+          } else {
+            handleSearch(searchQuery);
+          }
         }}>
         <TextField
           id="search-bar"
@@ -23,7 +28,11 @@ const SearchBar: React.FC<IProps> = ({ handleSearch }) => {
           label="Github username"
           variant="outlined"
           value={searchQuery}
-          onInput={(e) => setSearchQuery((e.target as HTMLInputElement).value)}
+          onChange={(e) => {
+            setError('');
+            setSearchQuery((e.target as HTMLInputElement).value);
+          }}
+          helperText={error}
           placeholder="Search..."
           size="small"
           sx={{ minWidth: '30vw' }}
