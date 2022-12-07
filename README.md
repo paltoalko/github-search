@@ -1,5 +1,7 @@
 ## Github search app
 
-App allows to search users on Github and display their repositories. Remember that there is limit for requests.
+App allows to search for up users and display their repositories on Github.
 
 ## Live version
+
+https://githubsearch-tvaa.onrender.com/
