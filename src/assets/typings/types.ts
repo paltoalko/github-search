@@ -1,6 +1,7 @@
 export type UserType = {
   id: number;
   name: string;
+  profileUrl: string;
 };
 
 export type RepoType = {
@@ -10,3 +11,7 @@ export type RepoType = {
   url: string;
   id: number;
 };
+
+export interface UserComponent extends UserType {
+  checkAvailableRequests: (res) => void;
+}
