@@ -3,5 +3,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10vmax;
+  min-height: 100vh;
+}
+.homeBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4vmax;
+}
+
+.remainingText {
+  margin-top: auto;
+  margin-bottom: 5px;
+  text-align: center;
 }
