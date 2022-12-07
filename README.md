@@ -1,7 +1,5 @@
 ## Github search app
 
-App allows to search for up users and display their repositories on Github.
-
-## To replicate
+App allows to search users on Github and display their repositories. Remember that there is limit for requests.
 
 ## Live version
